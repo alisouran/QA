@@ -18,8 +18,8 @@ function prev() {
     prevEnable = disable.previousElementSibling;
   disable.classList.remove('enable');
   disable.classList.add('disable');
-  prevEnable.classList.add('enable');
   prevEnable.classList.remove('disable');
+  prevEnable.classList.add('enable');
 }
 
 function keyDown(event) {
