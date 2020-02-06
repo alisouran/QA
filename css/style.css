@@ -407,6 +407,14 @@ textarea {
   left: 10%;
 }
 
+.logo {
+  width: 20%;
+  position: absolute;
+  top: 80%;
+  text-align: center;
+  left: 776px;
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   h2 {
     padding: 0%;
@@ -414,6 +422,13 @@ textarea {
   }
   h1 {
     top: 14px;
+  }
+  .logo {
+    width: 80%;
+    position: absolute;
+    top: 500px;
+    text-align: center;
+    left: 10%;
   }
 }
 
