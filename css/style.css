@@ -397,6 +397,7 @@ textarea {
   position: absolute;
   border: 1px solid white;
   border-radius: 5px;
+  font-family: Vazir;
   direction: rtl;
 }
 
