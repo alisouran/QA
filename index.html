@@ -6,7 +6,6 @@
   <title>صبح‌خلاق اصفهان</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
-  <link rel="stylesheet" href="css/all.css">
   <link rel="stylesheet" href="css/style.css">
 
 
@@ -18,10 +17,37 @@
   <h1>پرسش و پاسخ</h1>
   <form>
     <fieldset class="question enable">
-      <textarea type="textarea" name="name" placeholder="سوال خود را بنویسید"></textarea>
+      <textarea type="textarea" name="speakerQuestion" placeholder="سوال خود را بنویسید"></textarea>
     </fieldset>
   </form>
+  <button id="sendQuestion" type="submit">ارسال فرم</button>
   <img class="logo" src="img/CMISFAHAN.png" alt="">
+
+
+  <script src="js/jquery.min.js"></script>
+  <script>
+    $("#sendQuestion").click(function (e) {
+      e.preventDefault();
+      console.log("hi")
+      var q = $("textarea[name=speakerQuestion]").val();
+      var result = {
+        "Question": q
+      }
+      xhr = new XMLHttpRequest();
+      var url = "https://cmisfahan.ir/api/question/";
+      xhr.open("POST", url, true);
+      xhr.setRequestHeader("Content-type", "application/json");
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          var json = JSON.parse(xhr.responseText);
+          console.log(json.email + ", " + json.name)
+        }
+      }
+      var data = JSON.stringify(result);
+      xhr.send(data);
+      console.log(data)
+    });
+  </script>
 </body>
 
 </html>

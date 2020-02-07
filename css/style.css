@@ -99,7 +99,7 @@ form fieldset {
   transform: scale(0.2);
   transition: all 0.4s ease-in-out;
   left: -26px;
-  top: 0px;
+  top: -200%;
 }
 
 form fieldset input, form fieldset p {
@@ -440,6 +440,13 @@ textarea {
   font-size: 30px;
 }
 
+button {
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0);
+}
+
 @media only screen and (min-device-width: 320px) and (max-device-width: 480px) {
   h2 {
     padding: 0%;
@@ -457,7 +464,7 @@ textarea {
   }
 }
 
-@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) {
   h2 {
     padding: 0%;
     top: 55px;
@@ -483,5 +490,19 @@ textarea {
   }
   .q6 {
     top: -100px;
+  }
+  #sendQuestion {
+    top: 70%;
+  }
+}
+
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) {
+  form fieldset {
+    width: 300px;
+    left: -5px;
+    top: -200px;
+  }
+  #sendQuestion {
+    top: 51%;
   }
 }
